@@ -3,9 +3,6 @@ import { Provider as ReduxProvider, connect } from "react-redux";
 import { legacy_createStore as createStore } from "redux";
 import PropTypes from "prop-types";
 
-
-
-
 class Presentational extends React.Component {
   constructor(props) {
     super(props)
