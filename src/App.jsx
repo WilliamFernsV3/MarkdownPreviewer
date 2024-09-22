@@ -2,6 +2,8 @@ import React from "react";
 import { Provider as ReduxProvider, connect } from "react-redux";
 import { legacy_createStore as createStore } from "redux";
 import PropTypes from "prop-types";
+import { marked } from "marked";
+import htmlParser from "html-react-parser";
 
 class Presentational extends React.Component {
   constructor(props) {
@@ -14,10 +16,15 @@ class Presentational extends React.Component {
   }
 
   render() {
+    const text = this.props.text;
     return (
       <div>
-        <textarea id="editor" value={this.props.text} onChange={this.handleTextChange} />
-        <div id="preview" />
+        <textarea id="editor" value={text} onChange={this.handleTextChange} />
+        <div id="preview">
+          {
+            htmlParser(marked(text))
+          }
+        </div>
       </div>
     )
   }
