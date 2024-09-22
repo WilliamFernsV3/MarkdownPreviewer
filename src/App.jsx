@@ -5,10 +5,6 @@ import PropTypes from "prop-types";
 import { marked } from "marked";
 import htmlParser from "html-react-parser";
 
-
-
-
-
 class Presentational extends React.Component {
   constructor(props) {
     super(props)
@@ -49,7 +45,7 @@ const updateTextAction = (text) => {
 }
 
 const defaultState = {
-  text: "",
+  text: "# Simple Markdown Previewer \n## Subtitle Here\n[This is a link](https://github.com/WilliamFernsV3/)\n```bash\necho(\"this is a code block\")\n```\n## Another Subtitle\n>This is a block quote\n\n## Image:\n\n![Image](https://static.vecteezy.com/system/resources/thumbnails/022/963/918/small/ai-generative-cute-cat-isolated-on-solid-background-photo.jpg)\n\nThis is **some bold text**.",
 }
 
 const MarkdownPreviewReducer = (state = defaultState, action) => {
