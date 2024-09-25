@@ -11,8 +11,18 @@ class Presentational extends React.Component {
 
   render() {
     const text = this.props.text;
+    const styles = {
+      Container: {
+        width: "100%",
+        display: "flex",
+        flexDirection: "column",
+        alignItems: "center",
+        justifyContent: "center",
+        gap: 20,
+      }
+    }
     return (
-      <div>
+      <div style={styles.Container}>
         <Editor text={text} submitUpdateText={this.props.submitUpdateText} />
         <Previewer text={text} />
       </div>

@@ -12,8 +12,24 @@ class Editor extends React.Component {
   }
 
   render() {
+    const styles = {
+      Container: {
+        width: "100%",
+        display: "flex",
+        flexDirection: "column",
+        alignItems: "center",
+        justifyContent: "center",
+        gap: 20,
+      },
+      TextArea: {
+        width: "100%",
+      }
+    }
+
     return (
-      <textarea id="editor" value={this.props.text} onChange={this.handleTextChange} />
+      <div style={styles.Container}>
+        <textarea id="editor" value={this.props.text} onChange={this.handleTextChange} style={styles.TextArea} />
+      </div>
     )
   }
 }
